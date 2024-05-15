@@ -1,6 +1,7 @@
 //Part 1: Class Design
 
-class Book {
+//individual book
+class Book { 
   constructor(title, author, isbn, price, availability) {
     this.title = title; 
     this.author = author;
@@ -10,6 +11,7 @@ class Book {
   }
 };
 
+//users of the bookstore
 class User {
   constructor(name, email, userID) {
     this.name = name;
@@ -18,6 +20,7 @@ class User {
   }
 }
 
+//simulate a shopping cart
 class Cart {
   constructor() {
     this.books = [];
@@ -44,6 +47,7 @@ class Cart {
   }
 }
 
+// user's order
 class Order {
   constructor(user, books) {
       this.user = user;
@@ -51,6 +55,7 @@ class Order {
       this.totalPrice = this.calculateTotalPrice();
   }
 
+  //calculate user total price
   calculateTotalPrice() {
       let totalPrice = 0;
       for (let book of this.books) {
