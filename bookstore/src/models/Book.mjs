@@ -1,3 +1,4 @@
+//individual book
 export class Book { 
   constructor(title, author, isbn, price, availability) {
     this.title = title; 

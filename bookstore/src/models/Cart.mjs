@@ -1,3 +1,4 @@
+//simulate a shopping cart
 export class Cart {
   constructor() {
     this.books = [];

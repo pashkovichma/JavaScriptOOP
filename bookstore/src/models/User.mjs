@@ -1,7 +1,30 @@
+//users of the bookstore
 export class User {
-  constructor(name, email, userID) {
-    this.name = name;
-    this.email = email;
-    this.userID = userID;
+  static counterUserId = 1; //Static counter to generate unique userID
+
+  constructor(name, email) {
+    this._name = name;
+    this._email = email;
+    this._userID = User.counterUserId++; //generate unique userID
+  }
+
+  set name(newName) {
+    this._name = newName;
+  }
+
+  get name() {
+    return this._name;
+  }
+
+  set email(newEmail) {
+    this._email = newEmail;
+  }
+
+  get email() {
+    return this._email;
+  }
+
+  get userID() {
+    return this._userID;
   }
 }
