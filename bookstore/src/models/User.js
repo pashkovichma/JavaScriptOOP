@@ -1,4 +1,4 @@
-//users of the bookstore
+
 export class User {
   static counterUserId = 1; //Static counter to generate unique userID
 

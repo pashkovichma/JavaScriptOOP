@@ -1,17 +1,22 @@
-//simulate a shopping cart
+import { Book } from './books/Book.js';
+
 export class Cart {
   constructor() {
-    this.books = [];
+    this._books = [];
   }
 
   addBook(book) {
-    this.books.push(book);
+    if (book instanceof Book) {
+      this._books.push(book);
+    } else {
+      throw new Error(`${book} is not an instance of Book`);
+    }
   }
 
   removeBook(book) {
-    const index = this.books.indexOf(book);
+    const index = this._books.indexOf(book);
     if (index > -1) {
-      this.books.splice(index, 1);
+      this._books.splice(index, 1);
     }
   }
 
@@ -22,5 +27,17 @@ export class Cart {
       totalPrice += book.price;
     }
     return totalPrice;
+  }
+
+  get books() {
+    return this._books;
+  }
+
+  set books(newBooks) {
+    if (Array.isArray(newBooks) && newBooks.every(book => book instanceof Book)) {
+        this._books = newBooks;
+    } else {
+        throw new Error('Every book should be an instance of Book');
+    }
   }
 }

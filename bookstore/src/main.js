@@ -12,7 +12,6 @@ const book3 = new Book("Name book3", "Author book3", "ISBN book3", 3, true);
 const fictionBook = new FictionBook("Name fictionBook1", "Author fictionBook1", "ISBN fictionBook1", 11, true);
 const nonFictionBook = new NonFictionBook("Name fictionBook2", "Author fictionBook2", "ISBN fictionBook2", 22, true);
 
-
 const user1 = new User("Name user1", "email user1");
 const user2 = new User("Name user2", "email user2");
 const user3 = new User("Name user3", "email user3");
@@ -31,11 +30,11 @@ cart2.addBook(nonFictionBook);
 const order1 = new Order(user1, cart1.books);
 const order2 = new Order(user2, cart2.books); 
 
-
 //Demonstration
 
 console.log("Order1 User1:");
 console.log("Books:");
+//console.log(order1);
 order1.books.forEach(book => {
     console.log(`Book: ${book.title} Price: ${book.price}`);
 });
